@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Herobots</title>
     <style>
-      /* Add some style to make the website look nice */
       body {
         font-family: Arial, sans-serif;
         background-color: #222;
@@ -93,8 +92,8 @@
 </div>
 </div>
 
-<h2>Connection: <span id="status" style="font-weight: bold;">N/A</span></p>
-    <p><code>/test_topic</code> messages received: <ul id="messages" style="font-weight: bold;"></ul></h2>
+<h2>Connection: <span id="status" style="font-weight: bold;">N/A</span></h2>
+    <p><code>/test_topic</code> messages received: <ul id="messages" style="font-weight: bold;"></ul></p>
 
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 
@@ -114,18 +113,21 @@
 	});
 
 
-    const listener = new ROSLIB.TOPIC({
-	ros,
+    const listener = new ROSLIB.Topic({
+	  ros,
   	name: "/test_topic",
   	messageType: "std_msgs/String",
 	});
 
+
+  listener.subscribe((message) => {
     const ul = document.getElementById("messages");
     const newMessage = document.createElement("li");
     newMessage.appendChild(document.createTextNode(message.data));
     ul.appendChild(newMessage);
+});
 
-    </script>
+  </script>
 
 
 
@@ -133,6 +135,7 @@
 <footer>
   <p>Copyright 2023 Herobots</p>
 </footer>
+
 </div>
 </body>
 </html>
