@@ -1,0 +1,38 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/alesof/workspace/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/alesof/workspace/src/aruco_ros/aruco/include/**",
+        "/home/alesof/workspace/src/aruco_ros/aruco_ros/include/**",
+        "/home/alesof/workspace/src/champ/champ/include/**",
+        "/home/alesof/workspace/src/champ/champ_base/include/**",
+        "/home/alesof/workspace/src/champ/champ_config/include/**",
+        "/home/alesof/workspace/src/exe1/include/**",
+        "/home/alesof/workspace/src/exe2/include/**",
+        "/home/alesof/workspace/src/exe3/include/**",
+        "/home/alesof/workspace/src/exe4/include/**",
+        "/home/alesof/workspace/src/exe5/include/**",
+        "/home/alesof/workspace/src/map_server/include/**",
+        "/home/alesof/workspace/src/opencv_tutorial/include/**",
+        "/home/alesof/workspace/src/xpp/robots/xpp_hyq/include/**",
+        "/home/alesof/workspace/src/xpp/xpp_msgs/include/**",
+        "/home/alesof/workspace/src/xpp/xpp_states/include/**",
+        "/home/alesof/workspace/src/xpp/xpp_vis/include/**",
+        "/home/alesof/workspace/src/yocs_velocity_smoother/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
