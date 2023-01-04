@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Herobots</title>
+    <style>
+      /* Add some style to make the website look nice */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #fff;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: #ffa500;
+      }
+      a {
+        color: #ffa500;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #000;
+        background-color: #ffa500;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu a {
+        display: block;
+        padding: 10px;
+        color: #fff;
+        background-color: #333;
+        border-radius: 5px;
+      }
+      .menu a:hover {
+        background-color: #ffa500;
+      }
+      .team {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .team-member {
+        width: calc(25% - 20px);
+        margin-bottom: 20px;
+      }
+      .team-member img {
+        width: 100%;
+        border-radius: 50%;
+      }
+      .team-member h4 {
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="menu">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Products</a>
+          <a href="#">Team</a>
+          <a href="#">Contact</a>
+        </div>
+      <main>
+        <h1>Welcome to Herobots</h1>
+        <p>We are an innovative robotics startup focused on developing cutting-edge technology to make the world a better place. Our team of talented engineers and researchers are constantly pushing the boundaries of what is possible with robotics, and we are excited to share our work with you.</p>
+        <h2>Meet the team</h2>
+        <div class="team">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Profile picture of John Smith">
+            <h4>John Smith</h4>
+          </div>
+<div class="team-member">
+  <img src="https://via.placeholder.com/150" alt="Profile picture of Robert Williams">
+  <h4>Robert Williams</h4>
+</div>
+<div class="team-member">
+  <img src="https://via.placeholder.com/150" alt="Profile picture of Emily Johnson">
+  <h4>Emily Johnson</h4>
+</div>
+<div class="team-member">
+  <img src="https://via.placeholder.com/150" alt="Profile picture of Michael Brown">
+  <h4>Michael Brown</h4>
+</div>
+</div>
+
+<h2>Connection: <span id="status" style="font-weight: bold;">N/A</span></p>
+    <p><code>/test_topic</code> messages received: <ul id="messages" style="font-weight: bold;"></ul></h2>
+
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+
+    <script type="text/javascript" type="text/javascript">
+    const ros = new ROSLIB.Ros({ url: "ws://localhost:9090" });
+
+    ros.on("connection", () => {
+  	document.getElementById("status").innerHTML = "successful";
+	});
+
+    ros.on("error", (error) => {
+  	document.getElementById("status").innerHTML = `errored out (${error})`;
+	});
+
+    ros.on("close", () => {
+  	document.getElementById("status").innerHTML = "closed";
+	});
+
+
+    const listener = new ROSLIB.TOPIC({
+	ros,
+  	name: "/test_topic",
+  	messageType: "std_msgs/String",
+	});
+
+    const ul = document.getElementById("messages");
+    const newMessage = document.createElement("li");
+    newMessage.appendChild(document.createTextNode(message.data));
+    ul.appendChild(newMessage);
+
+    </script>
+
+
+
+</main>
+<footer>
+  <p>Copyright 2023 Herobots</p>
+</footer>
+</div>
+</body>
+</html>
