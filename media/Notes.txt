@@ -1,0 +1,56 @@
+Useful first notes on ROS2:
+
+Layers:
+
+	1. OS Layer
+	2. DDS - Middleware
+	3. Rcl - ROS2 Client (rclcpp)
+	4. User Nodes
+
+Setup:
+
+	[UNDERLAY] - setup for ROS2: source /opt/ros/foxy/setup.bash
+	[OVERLAY]  - setup for WS: source ~/ros2_ws/install/setup.bash  <- ros2_ws is the workspace name temporarly used
+
+	Those can be set in auto using the bashrc <- not doing it on my machine as i want to keep working on ROS1 projects.
+
+	Default build workspace with : colcon (collective construction) can compile ROS1, ROS2 and CMake. 
+	It automates the process of building and set up the environment to use the package.
+
+
+Useful Commands:
+
+	Check installed pakages: 	ros2 pkg list
+	
+	Run a node:			ros2 run <pkg_name> <node_cpp_name>
+	List nodes:			ros2 node list
+	Get node info:			ros2 node info <node_name>
+	
+	
+	List topics:			ros2 topic list
+	Get topic info:		ros2 topic info <topic_name>
+	Print topic msg:		ros2 topic echo <topic_name>
+	
+	
+	List msgs:			ros2 interface list
+	Msg format:			ros2 interface show <msg_name>
+	
+	
+	Visualize Computation Graph:	ros2 run rqt_graph rqt_graph
+	
+	
+Create a Package:
+
+Pkgs must be created inside the src folder. 
+
+The following command is used to create a new package: ros2 pkg create <pkg_name> --dependencies <dep_names_space_separated>
+
+After building the root, you need to resource the ws with: source install/setup.bash
+
+Build:
+	colcon build --symlink-install --packages-select <pkg_name>
+	source install/setup.bash
+
+	
+	
+	
