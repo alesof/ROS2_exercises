@@ -19,10 +19,10 @@ Behaviour:
 
 This node instantiates the following parameters and then logs them in the consolle using a callback.
 
-    ```
-    topic_num: 2
-    topic_nam: [test1, test2]
-    topic_typ: [std_msgs/msg/Int32, std_msgs/msg/String]
-    ```
-    
+```
+topic_num: 2
+topic_nam: [test1, test2]
+topic_typ: [std_msgs/msg/Int32, std_msgs/msg/String]
+```
+
  
