@@ -1,16 +1,28 @@
-# Exercise 3 - Launcher
-This exercise is to test Launcher files in ROS2. It uses the same publisher/subscriber nodes defined in exercise2.
+# Exercise 4 - Parameters
+This exercise is to test Parameters in ROS2.
 
 ## Build and Run
 
 Build and source the package
 ```
-$ colcon build --symlink-install --packages-select ex3_launcher
+$ colcon build --symlink-install --packages-select ex4_params
 $ source install/setup.bash
 ```
 
-Launch a publisher and a subscriber using the launch file:
+Launch the node:
 
 ```
-$ ros2 launch ex3_launcher pub_sub_launch.py
+$ ros2 launch ex4_params ex4_launch.py
 ```
+
+Behaviour:
+
+This node instantiates the following parameters and then logs them in the consolle using a callback.
+
+    ```
+    topic_num: 2
+    topic_nam: [test1, test2]
+    topic_typ: [std_msgs/msg/Int32, std_msgs/msg/String]
+    ```
+    
+ 
