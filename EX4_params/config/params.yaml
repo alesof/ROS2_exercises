@@ -1,0 +1,5 @@
+ex4_param_node:
+  ros__parameters:
+    topic_num: 2
+    topic_nam: [test1, test2]
+    topic_typ: [std_msgs/msg/Int32, std_msgs/msg/String]
